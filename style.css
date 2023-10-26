@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Digital Regular;
+  src: url(digital.ttf);
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  background: #e0e0e0;
+  padding: 10px;
+}
+
+.clock {
+  position: absolute;
+  height: 20em;
+  width: 20em;
+  border-radius: 10em;
+  background: #e0e0e0;
+  box-shadow:  20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* edit */
+
+.minute,
+.hour {
+  position: absolute;
+  height: 100px;
+  width: 6px;
+  margin: auto;
+  top: -37%;
+  left: -6%;
+  bottom: 0;
+  right: 0;
+  background: black;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.minute {
+  position: absolute;
+  height: 120px;
+  width: 4px;
+  top: -43%;
+  left: -9%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  transform: rotate(90deg);
+}
+
+.second {
+  position: absolute;
+  height: 130px;
+  width: 2px;
+  margin: auto;
+  top: -44%;
+  left: -9%;
+  bottom: 0;
+  right: 0;
+  border-radius: 4px;
+  background: #FF4B3E;
+  transform-origin: bottom center;
+  transform: rotate(180deg);
+  z-index: 2;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #181818;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  box-shadow:  25px 25px 50px #bebebe, -25px -25px 50px #ffffff;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #181818;
+  left: 50%;
+  top: calc(50% - 150px);
+  z-index: 2;
+  transform: translateX(-50%);
+  box-shadow: 140px 145px 0 0 #181818, -140px 145px 0 0 #181818, 0 280px 0 0 #181818;
+}
+
+.wrap {
+  overflow: hidden;
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 100%;
+}
+
+#time {
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow:  20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  height: 2.2em;
+  width: 10em;
+  border-radius: 1em;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 18px 25px;
+  text-align: center;
+  font-size: 25px;
+  font-family: "Digital Regular", sans-serif;
+  transition: 0.4s ease;
+}
